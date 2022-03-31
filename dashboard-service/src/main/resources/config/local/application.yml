@@ -66,14 +66,14 @@ ccuap:
       - name: bizdb
         db-type: mysql
         host: localhost:3306
-        database: test
+        database: dashboard
         username: root
         password: 123456
       # 系统数据库
       - name: sysdb
         db-type: mysql
         host: localhost:3306
-        database: test
+        database: dashboard
         username: root
         password: 123456
 
