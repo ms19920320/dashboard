@@ -63,7 +63,7 @@ public class PersonApiImpl implements PersonApi {
     return ApiResponse.successWithData(personVoPageInfo);
   }
 
-  @QueryMapping(value = "/getPersons", method = RequestMethod.GET)
+  @QueryMapping(value = "/getPersons", method = RequestMethod.POST)
   public ApiResponse<List<PersonVo>> getPersons() {
     return ApiResponse.successWithData(personService.getPersons());
   }

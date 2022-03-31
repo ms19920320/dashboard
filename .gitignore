@@ -1,3 +1,4 @@
 /.idea/
 /dashboard-api/target/*
 /dashboard-service/target/*
+/dashboard-service/logs/
