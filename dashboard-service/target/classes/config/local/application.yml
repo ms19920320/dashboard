@@ -1,0 +1,92 @@
+# ============================================================================
+# 静态配置（应用启动后无法通过配置中心动态调整）
+# ============================================================================
+spring:
+  # 配置中心
+  cloud:
+    nacos:
+      username: ccuap
+      password: ccuap
+      config:
+        enabled: true
+        server-addr: 116.62.108.129:8848
+        file-extension: yml
+        refresh-enabled: true
+        namespace: 441b7f9d-7077-4482-96c8-f95a85ea3ca4
+        name: application
+        group: DEFAULT_GROUP
+        extension-configs:
+          - data-id: application-message.yml
+            group: DEFAULT_GROUP
+            refresh: true
+          - data-id: application-others.yml
+            group: DEFAULT_GROUP
+            refresh: true
+      discovery:
+        enabled: true
+        server-addr: 116.62.108.129:8848
+        namespace: 441b7f9d-7077-4482-96c8-f95a85ea3ca4
+
+  # redis连接池配置
+  redis:
+    host: 116.62.108.129
+    port: 6379
+    password: 123456
+
+  # 应用名称
+  application:
+    name: web-example
+
+# 服务地址、上下文配置。
+server:
+  address: localhost
+  port: 8080
+  servlet:
+    # （PS：上下文名必须要和应用名保持一致）
+    context-path: /${spring.application.name}
+
+# Swagger配置信息
+knife4j:
+  enable: true
+  config:
+    title: Web样例
+    description: Web样例程序API接口
+    version: 3.0.0版本
+    contact:
+      name: sample
+      email: sample@citycloud.com.cn
+      url: https://www.citycloud.com.cn/
+
+# 统一研发平台组件配置
+ccuap:
+  # 数据源配置
+  datasource:
+    config:
+      # 业务数据库
+      - name: bizdb
+        db-type: mysql
+        host: localhost:3306
+        database: test
+        username: root
+        password: 123456
+      # 系统数据库
+      - name: sysdb
+        db-type: mysql
+        host: localhost:3306
+        database: test
+        username: root
+        password: 123456
+
+    # 默认数据源
+    default-datasource: bizdb
+
+    # mysql连接池配置（【注意】生产环境需要根据实际环境调整连接池配置。）
+    mysql:
+      druid:
+        initial-size: 100
+        min-idle: 100
+        max-active: 500
+        stat-filter:
+          slow-sql-millis: 2000
+          log-slow-sql: true
+          slow-sql-log-level: warn
