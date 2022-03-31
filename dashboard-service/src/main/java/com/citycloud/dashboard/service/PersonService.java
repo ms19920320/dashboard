@@ -27,4 +27,6 @@ public interface PersonService extends IService<PersonDo> {
   PersonVo findById(Integer id);
 
   PageInfo<PersonVo> findListByPage(PersonListQuery listQuery);
+
+  List<PersonVo> getPersons();
 }

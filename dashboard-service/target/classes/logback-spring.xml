@@ -1,3 +1,0 @@
-<configuration debug="false">
-    <include optional="true" resource="logback-common.xml"/>
-</configuration>

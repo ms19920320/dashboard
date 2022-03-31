@@ -15,6 +15,8 @@ import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import java.util.List;
+
 /**
  * person类处理入口
  *
@@ -59,5 +61,10 @@ public class PersonApiImpl implements PersonApi {
   public ApiResponse<PageInfo<PersonVo>> findListByPage(PersonListQuery listQuery) {
     PageInfo<PersonVo> personVoPageInfo = personService.findListByPage(listQuery);
     return ApiResponse.successWithData(personVoPageInfo);
+  }
+
+  @QueryMapping(value = "/getPersons", method = RequestMethod.GET)
+  public ApiResponse<List<PersonVo>> getPersons() {
+    return ApiResponse.successWithData(personService.getPersons());
   }
 }

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 此处与接口类地址对应 -->
+<mapper namespace="com.citycloud.dashboard.dao.PersonDao">
+    <select id="getPersons" resultType="com.citycloud.dashboard.viewobject.person.PersonVo">
+        select * from person
+    </select>
+</mapper>

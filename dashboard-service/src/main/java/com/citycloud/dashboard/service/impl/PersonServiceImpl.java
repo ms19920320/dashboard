@@ -72,4 +72,9 @@ public class PersonServiceImpl extends ServiceImpl<PersonDao, PersonDo> implemen
             .doSelectPage(() -> personDao.selectList(queryWrapper));
     return personDoPage.toPageInfo(personDao -> BeanCopyUtils.cloneFrom(personDao, PersonVo.class));
   }
+
+  @Override
+  public List<PersonVo> getPersons() {
+    return personDao.getPersons();
+  }
 }
