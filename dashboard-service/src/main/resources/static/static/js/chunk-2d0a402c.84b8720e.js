@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d0a402c"],{"052c":function(n,t,e){"use strict";e.r(t);var c=function(){var n=this,t=n.$createElement,e=n._self._c||t;return e("div",[n._v("人才合作")])},o=[],u={data:function(){return{}},props:{},components:{},methods:{},computed:{},watch:{},mounted:function(){},beforeDestroy:function(){}},r=u,a=e("2877"),s=Object(a["a"])(r,c,o,!1,null,"539ac0e7",null);t["default"]=s.exports}}]);
+//# sourceMappingURL=chunk-2d0a402c.84b8720e.js.map

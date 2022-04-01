@@ -1,13 +1,11 @@
 package com.citycloud.dashboard.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-
+import com.citycloud.dashboard.dao.dataobject.PersonDo;
 import com.citycloud.dashboard.parameter.command.person.CreatePersonCmd;
-import com.citycloud.dashboard.parameter.command.person.DeletePersonCmd;
 import com.citycloud.dashboard.parameter.command.person.UpdatePersonCmd;
 import com.citycloud.dashboard.parameter.query.person.PersonListQuery;
 import com.citycloud.dashboard.viewobject.person.PersonVo;
-import com.citycloud.dashboard.dao.dataobject.PersonDo;
 import com.github.pagehelper.PageInfo;
 
 import java.util.List;

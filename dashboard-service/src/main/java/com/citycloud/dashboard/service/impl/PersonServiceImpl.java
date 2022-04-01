@@ -2,30 +2,21 @@ package com.citycloud.dashboard.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-
 import com.citycloud.ccuap.spring.utils.BeanCopyUtils;
-import com.citycloud.ccuap.uidgenerator.UidGenerator;
-import com.citycloud.ccuap.utils.date.DateFormatUtil;
-import com.citycloud.dashboard.parameter.command.person.CreatePersonCmd;
-import com.citycloud.dashboard.parameter.command.person.DeletePersonCmd;
-import com.citycloud.dashboard.parameter.command.person.UpdatePersonCmd;
-import com.citycloud.dashboard.parameter.query.person.PersonListQuery;
-import com.citycloud.dashboard.viewobject.person.PersonVo;
-import com.citycloud.dashboard.service.PersonService;
 import com.citycloud.dashboard.dao.PersonDao;
 import com.citycloud.dashboard.dao.dataobject.PersonDo;
+import com.citycloud.dashboard.parameter.command.person.CreatePersonCmd;
+import com.citycloud.dashboard.parameter.command.person.UpdatePersonCmd;
+import com.citycloud.dashboard.parameter.query.person.PersonListQuery;
+import com.citycloud.dashboard.service.PersonService;
+import com.citycloud.dashboard.viewobject.person.PersonVo;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageInfo;
 import com.github.pagehelper.page.PageMethod;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-import org.springframework.util.CollectionUtils;
 
-import java.util.Date;
 import java.util.List;
 
 /**
