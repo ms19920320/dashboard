@@ -6,7 +6,7 @@ import org.apache.ibatis.annotations.Mapper;
 
 /**
  * @author MoliCode
- * @date 2022-04-01
+ * @since 2022-04-01
  */
 @Mapper
 public interface IndustryParkDao extends BaseMapper<IndustryParkDo> {}

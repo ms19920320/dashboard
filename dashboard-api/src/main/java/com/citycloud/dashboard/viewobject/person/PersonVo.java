@@ -8,7 +8,7 @@ import java.io.Serializable;
 
 /**
  * @author guopeng
- * @date 2022-03-30
+ * @since 2022-03-30
  */
 @Data
 @ApiModel("person")

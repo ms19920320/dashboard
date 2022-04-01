@@ -9,7 +9,7 @@ import javax.validation.constraints.NotBlank;
 
 /**
  * @author MoliCode
- * @date 2022-03-31
+ * @since 2022-03-31
  */
 @Data
 @ApiModel("创建组织和专利关联表命令")

@@ -13,7 +13,7 @@ import java.util.List;
 
 /**
  * @author MoliCode
- * @date 2022-04-01
+ * @since 2022-04-01
  */
 @ApiController(path = "/industryPark")
 public class IndustryParkApiImpl implements IndustryParkApi {
@@ -30,38 +30,4 @@ public class IndustryParkApiImpl implements IndustryParkApi {
         return apiResponse;
     }
 
-//  @CommandMapping("/create")
-//  @Override
-//  public ApiResponse<Integer> create(CreateIndustryParkCmd cmd) {
-//    Integer result = industryParkService.create(cmd);
-//    return ApiResponse.successWithMsgAndData(result, 1000);
-//  }
-//
-//  @CommandMapping("/update")
-//  @Override
-//  public ApiResponse<Integer> update(UpdateIndustryParkCmd cmd) {
-//    Integer result = industryParkService.update(cmd);
-//    return ApiResponse.successWithData(result);
-//  }
-//
-//  @CommandMapping("/deleteById")
-//  @Override
-//  public ApiResponse<Integer> deleteById(DeleteIndustryParkCmd cmd) {
-//    Integer result = industryParkService.deleteById(cmd.getId());
-//    return ApiResponse.successWithData(result);
-//  }
-//
-//  @QueryMapping("/findById")
-//  @Override
-//  public ApiResponse<IndustryParkVo> findById(Integer industryParkId) {
-//    IndustryParkVo industryParkVo = industryParkService.findById(industryParkId);
-//    return ApiResponse.successWithData(industryParkVo);
-//  }
-//
-//  @QueryMapping(value = "/findListByPage", method = RequestMethod.POST)
-//  @Override
-//  public ApiResponse<PageInfo<IndustryParkVo>> findListByPage(IndustryParkListQuery listQuery) {
-//    PageInfo<IndustryParkVo> industryParkVoPageInfo = industryParkService.findListByPage(listQuery);
-//    return ApiResponse.successWithData(industryParkVoPageInfo);
-//  }
 }

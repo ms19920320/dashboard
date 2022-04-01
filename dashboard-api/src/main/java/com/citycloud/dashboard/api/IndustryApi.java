@@ -17,7 +17,7 @@ import javax.validation.constraints.NotBlank;
 
 /**
  * @author MoliCode
- * @date 2022-03-31
+ * @since 2022-03-31
  */
 @Api(tags = "产业链表，包含产业中上游，产业类型，具体产业接口")
 public interface IndustryApi {

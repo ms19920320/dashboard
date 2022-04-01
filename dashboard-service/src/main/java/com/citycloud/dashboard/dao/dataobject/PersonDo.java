@@ -7,7 +7,7 @@ import lombok.Data;
 
 /**
  * @author guopeng
- * @date 2022-03-30
+ * @since 2022-03-30
  */
 @Data
 @TableName("person")

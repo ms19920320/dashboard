@@ -11,7 +11,7 @@ import com.github.pagehelper.PageInfo;
 
 /**
  * @author MoliCode
- * @date 2022-03-31
+ * @since 2022-03-31
  */
 public interface CompanyService extends IService<CompanyDo> {
 

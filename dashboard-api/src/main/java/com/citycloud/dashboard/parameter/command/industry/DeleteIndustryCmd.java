@@ -9,7 +9,7 @@ import javax.validation.constraints.NotBlank;
 
 /**
  * @author MoliCode
- * @date 2022-03-31
+ * @since 2022-03-31
  */
 @Data
 @ApiModel("删除产业链表，包含产业中上游，产业类型，具体产业命令")

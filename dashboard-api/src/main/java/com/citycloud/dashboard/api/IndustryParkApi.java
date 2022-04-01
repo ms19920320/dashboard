@@ -5,11 +5,11 @@ import com.citycloud.dashboard.viewobject.industrypark.IndustryParkVo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
-;import java.util.List;
+import java.util.List;
 
 /**
  * @author MoliCode
- * @date 2022-04-01
+ * @since 2022-04-01
  */
 @Api(tags = "产业园接口")
 public interface IndustryParkApi {

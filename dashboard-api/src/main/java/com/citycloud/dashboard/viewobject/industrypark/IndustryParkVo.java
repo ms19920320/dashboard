@@ -8,7 +8,7 @@ import java.io.Serializable;
 
 /**
  * @author MoliCode
- * @date 2022-04-01
+ * @since 2022-04-01
  */
 @Data
 @ApiModel("industry_park")

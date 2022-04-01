@@ -7,7 +7,7 @@ import org.apache.ibatis.annotations.Mapper;
 
 /**
  * @author MoliCode
- * @date 2022-03-31
+ * @since 2022-03-31
  */
 @Mapper
 public interface CompanyDao extends BaseMapper<CompanyDo> {}

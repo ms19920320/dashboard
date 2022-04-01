@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
  * @author MoliCode
- * @date 2022-03-31
+ * @since 2022-03-31
  */
 @ApiController(path = "/company")
 public class CompanyApiImpl implements CompanyApi {

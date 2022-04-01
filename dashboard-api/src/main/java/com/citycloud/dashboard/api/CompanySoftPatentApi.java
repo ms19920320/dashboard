@@ -17,7 +17,7 @@ import javax.validation.constraints.NotNull;
 
 /**
  * @author MoliCode
- * @date 2022-03-31
+ * @since 2022-03-31
  */
 @Api(tags = "组织和专利关联表接口")
 public interface CompanySoftPatentApi {

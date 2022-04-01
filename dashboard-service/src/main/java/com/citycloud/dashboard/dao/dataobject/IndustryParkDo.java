@@ -6,7 +6,7 @@ import lombok.Data;
 
 /**
  * @author MoliCode
- * @date 2022-04-01
+ * @since 2022-04-01
  */
 @Data
 @TableName("industry_park")
