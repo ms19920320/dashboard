@@ -21,7 +21,7 @@ public interface CompanyApi {
      *
      * @return 统一响应格式对象
      */
-    @ApiOperation(value = "按省份获取企业数", notes = "按省份获取企业数,及统计总企业数")
+    @ApiOperation(value = "统计各省份企业数目", notes = "统计各省份企业数目及全国企业数目")
     ApiResponse<List<Map<String, Object>>> findCompanyGroupByProvince();
 
 }

@@ -2,7 +2,6 @@ package com.citycloud.dashboard.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-
 import com.citycloud.ccuap.spring.utils.BeanCopyUtils;
 import com.citycloud.dashboard.dao.IndustryDao;
 import com.citycloud.dashboard.dao.dataobject.IndustryDo;
