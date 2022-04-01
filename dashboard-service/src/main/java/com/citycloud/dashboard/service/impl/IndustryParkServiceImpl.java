@@ -27,7 +27,9 @@ public class IndustryParkServiceImpl extends ServiceImpl<IndustryParkDao, Indust
 
     @Override
     public List<IndustryParkVo> findAll() {
-        List<IndustryParkDo> industryParkDos = industryParkDao.selectList(new QueryWrapper<>());
+        QueryWrapper<IndustryParkDo> objectQueryWrapper = new QueryWrapper<>();
+        objectQueryWrapper.select("id", "name", "province");
+        List<IndustryParkDo> industryParkDos = industryParkDao.selectList(objectQueryWrapper);
         return BeanCopyUtils.cloneFromList(industryParkDos, IndustryParkVo.class, "");
     }
 

@@ -85,7 +85,7 @@ ccuap:
       druid:
         initial-size: 100
         min-idle: 100
-        max-active: 500
+        max-active: 1000
         stat-filter:
           slow-sql-millis: 2000
           log-slow-sql: true
