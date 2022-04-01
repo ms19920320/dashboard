@@ -1,4 +1,4 @@
-package com.citycloud.dashboard.parameter.query.organizepersonnel;
+package com.citycloud.dashboard.parameter.query.personneltag;
 
 import com.citycloud.ccuap.web.api.parameter.IQuery;
 import io.swagger.annotations.ApiModel;
@@ -14,10 +14,10 @@ import javax.validation.constraints.NotNull;
  * @date 2022-04-01
  */
 @Data
-@ApiModel("organize_personnel")
-public class OrganizePersonnelListQuery implements IQuery {
+@ApiModel("personnel_tag")
+public class PersonnelTagListQuery implements IQuery {
 
-  private static final long serialVersionUID = -2737208628925705203L;
+  private static final long serialVersionUID = 287163279577502674L;
 
   @Min(value = 1, message = "[9004,{当前页},{1}]")
   @NotNull(message = "[9000,{分页pageNum}]")
@@ -27,13 +27,13 @@ public class OrganizePersonnelListQuery implements IQuery {
   @NotNull(message = "[9000,{分页pageSize}]")
   private Integer pageSize;
 
-  /** 组织ID */
-  @ApiModelProperty(value = "组织ID")
-  @NotBlank(message = "[9000,{组织ID}]")
-  private String organizeId;
-
-  /** 人才ID */
-  @ApiModelProperty(value = "人才ID")
-  @NotBlank(message = "[9000,{人才ID}]")
+  /** 人才编号 */
+  @ApiModelProperty(value = "人才编号", required = true)
+  @NotBlank(message = "[9000,{人才编号}]")
   private String personnelId;
+
+  /** 产业编号 */
+  @ApiModelProperty(value = "产业编号", required = true)
+  @NotBlank(message = "[9000,{产业编号}]")
+  private String industryId;
 }
