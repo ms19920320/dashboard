@@ -8,7 +8,7 @@ import lombok.Data;
 import javax.validation.constraints.NotBlank;
 
 /**
- * @author MoliCode
+ * @author 孟帅
  * @since 2022-04-01
  */
 @Data

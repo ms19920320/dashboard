@@ -10,7 +10,7 @@ import com.citycloud.dashboard.viewobject.company.CompanyVo;
 import com.github.pagehelper.PageInfo;
 
 /**
- * @author MoliCode
+ * @author 孟帅
  * @since 2022-03-31
  */
 public interface CompanyService extends IService<CompanyDo> {

@@ -5,7 +5,7 @@ import com.citycloud.dashboard.dao.dataobject.IndustryParkDo;
 import org.apache.ibatis.annotations.Mapper;
 
 /**
- * @author MoliCode
+ * @author 孟帅
  * @since 2022-04-01
  */
 @Mapper

@@ -9,7 +9,7 @@ import com.citycloud.dashboard.viewobject.industry.IndustryVo;
 import com.github.pagehelper.PageInfo;
 
 /**
- * @author MoliCode
+ * @author 孟帅
  * @since 2022-03-31
  */
 public interface IndustryService extends IService<IndustryDo> {

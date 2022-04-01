@@ -10,7 +10,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 /**
- * @author MoliCode
+ * @author 孟帅
  * @since 2022-04-01
  */
 @Data

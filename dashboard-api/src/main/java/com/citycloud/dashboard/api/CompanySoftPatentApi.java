@@ -16,7 +16,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
 /**
- * @author MoliCode
+ * @author 孟帅
  * @since 2022-03-31
  */
 @Api(tags = "组织和专利关联表接口")
