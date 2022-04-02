@@ -7,6 +7,7 @@ import com.citycloud.dashboard.api.IndustryParkApi;
 import com.citycloud.dashboard.service.IndustryParkService;
 import com.citycloud.dashboard.viewobject.industrypark.IndustryParkVo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.List;
@@ -21,6 +22,7 @@ public class IndustryParkApiImpl implements IndustryParkApi {
     @Autowired
     private IndustryParkService industryParkService;
 
+    @CrossOrigin
     @QueryMapping(value = "/findAll", method = RequestMethod.POST)
     @Override
     public ApiResponse<List<IndustryParkVo>> findAll() {

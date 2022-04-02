@@ -9,6 +9,7 @@ import com.citycloud.dashboard.parameter.query.industry.IndustryListQuery1;
 import com.citycloud.dashboard.service.IndustryService;
 import com.citycloud.dashboard.viewobject.industry.IndustryVo1;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 /**
  * 产业表web入口
@@ -29,11 +30,13 @@ public class IndustryApiImpl implements IndustryApi {
      * @param cmd 查询条件
      * @return .
      */
+    @CrossOrigin
     @CommandMapping("industryStatistics")
     @Override
     public ApiResponse<IndustryVo1> industryStatistics(IndustryListQuery cmd) {
         return industryService.industryStatistics(cmd);
     }
+
 
     @Override
     public ApiResponse<IndustryVo1> analysis(IndustryListQuery1 cmd) {

@@ -39,7 +39,7 @@ spring:
 
 # 服务地址、上下文配置。
 server:
-  address: localhost
+  address: 0.0.0.0
   port: 8080
   servlet:
     # （PS：上下文名必须要和应用名保持一致）
