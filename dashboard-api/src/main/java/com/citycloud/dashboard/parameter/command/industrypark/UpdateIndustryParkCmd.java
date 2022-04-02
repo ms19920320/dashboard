@@ -21,7 +21,7 @@ public class UpdateIndustryParkCmd implements ICommand {
   /** 主键 */
   @ApiModelProperty(value = "主键", required = true)
   @NotNull(message = "[9000,{主键}]")
-  private Integer id;
+  private String id;
 
   /** 名称 */
   @ApiModelProperty(value = "名称")

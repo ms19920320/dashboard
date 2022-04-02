@@ -12,7 +12,7 @@ import lombok.Data;
 @TableName("industry_park")
 public class IndustryParkDo {
 
-  @TableId private Integer id;
+  @TableId private String id;
 
   /** 名称 */
   private String name;

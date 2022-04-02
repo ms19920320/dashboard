@@ -13,6 +13,19 @@ import java.io.Serializable;
 @Data
 @ApiModel("IndustryVo")
 public class IndustryVo implements Serializable {
+    public static final String INDUSTRY_ID = "industry_id";
+
+    public static final String PARENT_ID = "parent_id";
+
+    public static final String NAME = "name";
+
+    public static final String POSITION = "position";
+
+    public static final String DETAIL = "detail";
+
+    public static final String TOTAL = "total";
+
+    public static final String HIERARCHY = "hierarchy";
 
     @ApiModelProperty(value = "产业编号")
     private String industryId;

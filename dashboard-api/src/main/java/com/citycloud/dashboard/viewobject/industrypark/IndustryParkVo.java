@@ -18,7 +18,7 @@ public class IndustryParkVo implements Serializable {
     public static final String PROVINCE = "province";
 
     @ApiModelProperty(value = "主键")
-    private Integer id;
+    private String id;
 
     @ApiModelProperty(value = "名称", position = 1)
     private String name;
