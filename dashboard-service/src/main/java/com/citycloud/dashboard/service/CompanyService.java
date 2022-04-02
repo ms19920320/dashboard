@@ -4,9 +4,9 @@ package com.citycloud.dashboard.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.citycloud.ccuap.web.api.response.ApiResponse;
 import com.citycloud.dashboard.dao.dataobject.CompanyDo;
+import com.citycloud.dashboard.viewobject.company.CompanyVo1;
 
 import java.util.List;
-import java.util.Map;
 
 /**
  * @author 孟帅
@@ -18,6 +18,6 @@ public interface CompanyService extends IService<CompanyDo> {
      *
      * @return .
      */
-    ApiResponse<List<Map<String, Object>>> findCompanyGroupByProvince();
+    ApiResponse<List<CompanyVo1>> findCompanyGroupByProvince();
 
 }

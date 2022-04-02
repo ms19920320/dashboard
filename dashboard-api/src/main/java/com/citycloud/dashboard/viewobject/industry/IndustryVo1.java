@@ -46,7 +46,7 @@ public class IndustryVo1 implements Serializable {
         @ApiModelProperty(value = "产业名称", position = 1)
         private String name;
 
-        @ApiModelProperty(value = "产业位置 2-上游 3-中游 4-下游", position = 2)
+        @ApiModelProperty(value = "产业位置 02-上游 03-中游 04-下游", position = 2)
         private String position;
 
         @ApiModelProperty(value = "子层产业详情", position = 3)

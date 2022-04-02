@@ -1,6 +1,7 @@
 package com.citycloud.dashboard.api;
 
 import com.citycloud.ccuap.web.api.response.ApiResponse;
+import com.citycloud.dashboard.viewobject.company.CompanyVo1;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
@@ -22,6 +23,6 @@ public interface CompanyApi {
      * @return 统一响应格式对象
      */
     @ApiOperation(value = "统计各省份企业数目", notes = "统计各省份企业数目及全国企业数目")
-    ApiResponse<List<Map<String, Object>>> findCompanyGroupByProvince();
+    ApiResponse<List<CompanyVo1>> findCompanyGroupByProvince();
 
 }

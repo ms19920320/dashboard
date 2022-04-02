@@ -5,11 +5,11 @@ import com.citycloud.ccuap.web.api.annotation.QueryMapping;
 import com.citycloud.ccuap.web.api.response.ApiResponse;
 import com.citycloud.dashboard.api.CompanyApi;
 import com.citycloud.dashboard.service.CompanyService;
+import com.citycloud.dashboard.viewobject.company.CompanyVo1;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.List;
-import java.util.Map;
 
 /**
  * @author 孟帅
@@ -18,11 +18,12 @@ import java.util.Map;
 @ApiController(path = "/company")
 public class CompanyApiImpl implements CompanyApi {
 
-  @Autowired private CompanyService companyService;
+    @Autowired
+    private CompanyService companyService;
 
-  @QueryMapping(value = "/findCompanyGroupByProvince", method = RequestMethod.POST)
-  @Override
-  public ApiResponse<List<Map<String, Object>>> findCompanyGroupByProvince() {
-    return companyService.findCompanyGroupByProvince();
-  }
+    @QueryMapping(value = "/findCompanyGroupByProvince", method = RequestMethod.POST)
+    @Override
+    public ApiResponse<List<CompanyVo1>> findCompanyGroupByProvince() {
+        return companyService.findCompanyGroupByProvince();
+    }
 }
