@@ -13,7 +13,7 @@ import java.util.Map;
  * @author 孟帅
  * @since 2022-03-31
  */
-@Api(tags = "企业表对应操作接口")
+@Api(tags = "企业API")
 public interface CompanyApi {
 
     /**

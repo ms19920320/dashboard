@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 此处与接口类地址对应 -->
+<mapper namespace="com.citycloud.dashboard.dao.IndustryDao">
+    <!-- 分析统计产业链情况 -->
+    <select id="industryStatistics" parameterType="com.citycloud.dashboard.viewobject.industry.IndustryVo1$Hierarchy04"
+            resultType="map">
+        SELECT COUNT(t.company_id) total, t.industry_id, t.name, t.hierarchy, t.parent_id, t.position
+        FROM (SELECT t1.*, t3.company_id, t3.cn_name, t3.province
+              FROM industry t1
+                       LEFT JOIN company_tag t2 ON t2.industry_id LIKE CONCAT('%', t1.industry_id, '%')
+                       LEFT JOIN (SELECT * FROM company
+                           <where>
+                               <if test="startDate!=null">
+                                   and establish_date &gt;= #{startDate}
+                               </if>
+                               <if test="endDate!=null">
+                                   and establish_date &lt; #{endDate}
+                               </if>
+                               <if test="province!=null and province!=''">
+                                   and province = #{province}
+                               </if>
+                               <if test="city!=null and city!=''">
+                                   and city = #{city}
+                               </if>
+                               <if test="area!=null and area!=''">
+                                   and area = #{area}
+                               </if>
+                           </where>
+                       ) t3 ON t2.company_id = t3.company_id) t
+        GROUP BY t.name, t.industry_id, t.parent_id, t.hierarchy, t.position
+    </select>
+</mapper>

@@ -1,13 +1,12 @@
 package com.citycloud.dashboard.parameter.query.industry;
 
 import com.citycloud.ccuap.web.api.parameter.IQuery;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
+import java.sql.Date;
 
 /**
  * @author 孟帅
@@ -19,31 +18,25 @@ public class IndustryListQuery implements IQuery {
 
   private static final long serialVersionUID = 5287537563742841465L;
 
-  @Min(value = 1, message = "[9004,{当前页},{1}]")
-  @NotNull(message = "[9000,{分页pageNum}]")
-  private Integer pageNum;
+  /** 查询条件-起始日期 */
+  @ApiModelProperty(value = "开始日期")
+  @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd", timezone = "GMT+8")
+  private Date startDate;
 
-  @Min(value = 1, message = "[9004,{每页记录数},{1}]")
-  @NotNull(message = "[9000,{分页pageSize}]")
-  private Integer pageSize;
+  /** 查询条件-结束日期 */
+  @ApiModelProperty(value = "结束日期")
+  @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd", timezone = "GMT+8")
+  private Date endDate;
 
-  /** 产业名称 */
-  @ApiModelProperty(value = "产业名称")
-  @NotBlank(message = "[9000,{产业名称}]")
-  private String name;
+  /** 查询条件-省 */
+  @ApiModelProperty(value = "省")
+  private String province;
 
-  /** 父级产业编号 */
-  @ApiModelProperty(value = "父级产业编号")
-  @NotBlank(message = "[9000,{父级产业编号}]")
-  private String parentId;
+  /** 查询条件-省 */
+  @ApiModelProperty(value = "市")
+  private String city;
 
-  /** 层级，01-电机产业链 */
-  @ApiModelProperty(value = "层级，01-电机产业链")
-  @NotBlank(message = "[9000,{层级，01-电机产业链}]")
-  private String hierarchy;
-
-  /** 处于产业位置 */
-  @ApiModelProperty(value = "处于产业位置")
-  @NotBlank(message = "[9000,{处于产业位置}]")
-  private String position;
+  /** 查询条件-区 */
+  @ApiModelProperty(value = "区")
+  private String area;
 }
