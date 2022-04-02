@@ -13,30 +13,40 @@ import java.sql.Date;
  * @since 2022-03-31
  */
 @Data
-@ApiModel("industry")
+@ApiModel("IndustryListQuery")
 public class IndustryListQuery implements IQuery {
 
-  private static final long serialVersionUID = 5287537563742841465L;
+    private static final long serialVersionUID = 5287537563742841465L;
 
-  /** 查询条件-起始日期 */
-  @ApiModelProperty(value = "开始日期")
-  @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd", timezone = "GMT+8")
-  private Date startDate;
+    /**
+     * 查询条件-省
+     */
+    @ApiModelProperty(value = "省")
+    private String province;
 
-  /** 查询条件-结束日期 */
-  @ApiModelProperty(value = "结束日期")
-  @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd", timezone = "GMT+8")
-  private Date endDate;
+    /**
+     * 查询条件-市
+     */
+    @ApiModelProperty(value = "市", position = 1)
+    private String city;
 
-  /** 查询条件-省 */
-  @ApiModelProperty(value = "省")
-  private String province;
+    /**
+     * 查询条件-区
+     */
+    @ApiModelProperty(value = "区", position = 2)
+    private String area;
 
-  /** 查询条件-省 */
-  @ApiModelProperty(value = "市")
-  private String city;
+    /**
+     * 查询条件-起始日期
+     */
+    @ApiModelProperty(value = "开始日期 yyyy-MM-dd格式", position = 3)
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd", timezone = "GMT+8")
+    private Date startDate;
 
-  /** 查询条件-区 */
-  @ApiModelProperty(value = "区")
-  private String area;
+    /**
+     * 查询条件-结束日期
+     */
+    @ApiModelProperty(value = "结束日期 yyyy-MM-dd格式", position = 4)
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd", timezone = "GMT+8")
+    private Date endDate;
 }

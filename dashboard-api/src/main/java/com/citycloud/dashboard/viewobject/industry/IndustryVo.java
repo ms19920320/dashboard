@@ -11,7 +11,7 @@ import java.io.Serializable;
  * @since 2022-03-31
  */
 @Data
-@ApiModel("industry")
+@ApiModel("IndustryVo")
 public class IndustryVo implements Serializable {
 
     @ApiModelProperty(value = "产业编号")
