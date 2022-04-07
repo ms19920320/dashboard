@@ -1,28 +1,117 @@
-<!DOCTYPE html><html lang=""><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="favicon.ico"><title>demo</title><style>/* 滚动条样式 */
-    ::-webkit-scrollbar {
-      width: 8px;
-      height: 8px;
-    }
-    ::-webkit-scrollbar-thumb {
-      background-color: #45d3e6;
-      border-radius: 3.5px;
-    }
-    ::-webkit-scrollbar-track {
-      background-color: #14606a;
-    }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>home</title>
+</head>
 
-    /* slider滑块  tooltip */
-    .ant-slider-tooltip .ant-tooltip-inner {
-      min-width: 13px;
-      min-height: 17px;
-      margin-top: -8px;
-      padding: 0 2px;
-      border-radius: 0;
-      font-size: 14px;
-      line-height: 16px;
-      background-color: #464646;
-      border: 1px solid #525252;
-    }
-    .ant-slider-tooltip .ant-tooltip-arrow{
-      display: none;
-    }</style><link href="static/css/chunk-02c08450.ce20914e.css" rel="prefetch"><link href="static/css/chunk-200cecec.630eb4cd.css" rel="prefetch"><link href="static/css/chunk-47eb59f3.0b2bbd01.css" rel="prefetch"><link href="static/js/chunk-02c08450.835b148c.js" rel="prefetch"><link href="static/js/chunk-200cecec.9dbe0850.js" rel="prefetch"><link href="static/js/chunk-2d0a402c.84b8720e.js" rel="prefetch"><link href="static/js/chunk-2d0d019f.858ca99e.js" rel="prefetch"><link href="static/js/chunk-47eb59f3.1b041c01.js" rel="prefetch"><link href="static/css/app.4b66fb61.css" rel="preload" as="style"><link href="static/css/chunk-vendors.3e3b0917.css" rel="preload" as="style"><link href="static/js/app.9059ae45.js" rel="preload" as="script"><link href="static/js/chunk-vendors.edba988f.js" rel="preload" as="script"><link href="static/css/chunk-vendors.3e3b0917.css" rel="stylesheet"><link href="static/css/app.4b66fb61.css" rel="stylesheet"></head><body><noscript><strong>We're sorry but demo doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id="app"></div><script src="static/js/chunk-vendors.edba988f.js"></script><script src="static/js/app.9059ae45.js"></script></body></html>
+<script src="http://lib.sinaapp.com/js/jquery/2.2.4/jquery-2.2.4.min.js"></script>
+<body>
+<div>
+    <label>用户名:</label> <input type="text" id="username">
+    <label>密码:</label><input type="password" id="password" value="密码">
+    <button id="login">登录</button>
+
+    <button id="logout">退出</button>
+
+    <div>
+        <button id="findAll">获取产业园信息</button>
+    </div>
+</div>
+</body>
+<script>
+    $(document).ready(function () {
+        $("#login").click(function () {
+            let param = {'username': $("#username").val(), 'password': $("#password").val()};
+            $.ajax({
+                type: "POST",
+                url: " http://localhost:8080/web-example/api/user/login",
+                dataType: "json",
+                headers: {'Content-Type': 'application/json;charset=utf8'},
+                data: JSON.stringify(param),
+                success: function (data) {
+                    let success = data.success;
+                    if (success) {
+                        alert("success");
+                        let accessToken = data.data;
+                        setCookie("accessToken", accessToken);
+                    }
+                },
+                error: function (jqXHR) {
+                    alert("error:" + JSON.stringify(data));
+                }
+            });
+        });
+
+        $("#logout").click(function () {
+            let param = {};
+            let accessToken = getCookie('accessToken');
+            $.ajax({
+                type: "POST",
+                url: " http://localhost:8080/web-example/api/user/logout",
+                dataType: "json",
+                headers: {'Content-Type': 'application/json;charset=utf8', 'accessToken': accessToken},
+                data: JSON.stringify(param),
+                success: function (data) {
+                    clearCookie();
+                    alert(JSON.stringify(data))
+                },
+                error: function (jqXHR) {
+                    alert("error:" + JSON.stringify(data));
+                }
+            });
+        });
+
+        $("#findAll").click(function () {
+            let param = {};
+            let accessToken = getCookie('accessToken');
+            $.ajax({
+                type: "POST",
+                url: " http://localhost:8080/web-example/api/industryPark/findAll",
+                dataType: "json",
+                headers: {'Content-Type': 'application/json;charset=utf8', 'accessToken': accessToken},
+                data: JSON.stringify(param),
+                success: function (data) {
+                    alert(JSON.stringify(data))
+                },
+                error: function (jqXHR) {
+                    alert("error:" + JSON.stringify(data));
+                }
+            });
+        });
+
+        function setCookie(name, value) {
+            //设置名称为name,值为value的Cookie
+            let expdate = new Date();   // 初始化时间
+            expdate.setTime(expdate.getTime() + 30 * 60 * 1000);   //时间
+            document.cookie = name + "=" + value + ";expires=" + expdate.toGMTString() + ";path=/";
+            //即document.cookie= name+"="+value+";path=/";   时间可以不要，但路径(path)必须要填写，因为JS的默认路径是当前页，如果不填，此cookie只在当前页面生效！~
+        }
+
+        function getCookie(c_name) {
+            if (document.cookie.length > 0) {
+                c_start = document.cookie.indexOf(c_name + "=")
+                if (c_start != -1) {
+                    c_start = c_start + c_name.length + 1
+                    c_end = document.cookie.indexOf(";", c_start)
+                    if (c_end == -1) c_end = document.cookie.length
+                    return unescape(document.cookie.substring(c_start, c_end))
+                }
+            }
+            return ""
+        }
+
+
+        function clearCookie() {
+            let keys = document.cookie.match(/[^ =;]+(?=\=)/g);
+            if (keys) {
+                for (let i = keys.length; i--;) {
+                    document.cookie = keys[i] + '=0;path=/;expires=' + new Date(0).toUTCString();//清除当前域名下的,例如：m.kevis.com
+                    document.cookie = keys[i] + '=0;path=/;domain=' + document.domain + ';expires=' + new Date(0).toUTCString();//清除当前域名下的，例如 .m.kevis.com
+                    document.cookie = keys[i] + '=0;path=/;domain=kevis.com;expires=' + new Date(0).toUTCString();//清除一级域名下的或指定的，例如 .kevis.com
+                }
+            }
+        }
+    });
+</script>
+</html>
