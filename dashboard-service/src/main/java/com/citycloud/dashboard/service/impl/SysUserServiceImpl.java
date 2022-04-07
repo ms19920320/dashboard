@@ -45,12 +45,11 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserDao, SysUserDo> imple
             RequestContext requestContext = RequestContextHolder.newContext();
             requestContext.setToken(accessToken);
             RequestContextHolder.setContext(requestContext);
-            return ApiResponse.successWithData(accessToken);
+            // 此处msg可以获取到
+            return ApiResponse.successWithMsgAndData(accessToken,1002);
         }
-        ApiResponse apiResponse = ApiResponse.failed();
-        apiResponse.setCode(401);
-        apiResponse.setSuccess(true);
-        return apiResponse;
+        // 此处响应一直失败，不知道原因
+        return ApiResponse.failedWithMsg(1002, "aa");
     }
 
     @Override

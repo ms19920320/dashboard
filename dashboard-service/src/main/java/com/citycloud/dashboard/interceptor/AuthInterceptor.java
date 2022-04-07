@@ -23,19 +23,19 @@ public class AuthInterceptor implements IRequestInterceptor {
 
     @Override
     public ApiResponse<?> handle(RequestContext context, LoginUser loginUser) throws Exception {
-        String servletPath = context.getRequest().getServletPath();
-        if (servletPath.toLowerCase(Locale.ENGLISH).contains("/api/user/login".toLowerCase(Locale.ENGLISH))) {
-            return ApiResponse.success();
-        }
-
-        String token = context.getToken();
-        if (StringUtils.isEmpty(token) || !RedisUtils.exists(token)) {
-            ApiResponse<Object> failed = ApiResponse.failed();
-            failed.setMessage("token校验失败");
-            return failed;
-        }
-
-        log.info("执行拦截器：SampleA。");
+//        String servletPath = context.getRequest().getServletPath();
+//        if (servletPath.toLowerCase(Locale.ENGLISH).contains("/api/user/login".toLowerCase(Locale.ENGLISH))) {
+//            return ApiResponse.success();
+//        }
+//
+//        String token = context.getToken();
+//        if (StringUtils.isEmpty(token) || !RedisUtils.exists(token)) {
+//            ApiResponse<Object> failed = ApiResponse.failed();
+//            failed.setMessage("token校验失败");
+//            return failed;
+//        }
+//
+//        log.info("执行拦截器：SampleA。");
         return ApiResponse.success();
     }
 

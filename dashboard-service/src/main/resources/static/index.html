@@ -31,6 +31,7 @@
                 data: JSON.stringify(param),
                 success: function (data) {
                     let success = data.success;
+                    alert(JSON.stringify(data))
                     if (success) {
                         alert("success");
                         let accessToken = data.data;

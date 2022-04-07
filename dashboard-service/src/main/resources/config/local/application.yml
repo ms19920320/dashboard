@@ -9,7 +9,7 @@ spring:
       password: ccuap
       config:
         enabled: true
-        server-addr: 116.62.108.129:8848
+        server-addr: 124.220.21.222:8848
         file-extension: yml
         refresh-enabled: true
         namespace: 441b7f9d-7077-4482-96c8-f95a85ea3ca4
@@ -65,14 +65,14 @@ ccuap:
       # 业务数据库
       - name: bizdb
         db-type: mysql
-        host: localhost:3306
+        host: 124.220.21.222:3306
         database: dashboard
         username: root
         password: 123456
       # 系统数据库
       - name: sysdb
         db-type: mysql
-        host: localhost:3306
+        host: 124.220.21.222:3306
         database: dashboard
         username: root
         password: 123456
