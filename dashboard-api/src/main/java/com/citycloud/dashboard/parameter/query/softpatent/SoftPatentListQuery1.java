@@ -19,7 +19,7 @@ import java.sql.Date;
  * @since 2022-03-31
  */
 @Data
-@ApiModel("soft_patent")
+@ApiModel("SoftPatentListQuery1")
 public class SoftPatentListQuery1 implements IQuery {
 
     private static final long serialVersionUID = -392543538982392110L;

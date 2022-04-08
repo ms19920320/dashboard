@@ -12,7 +12,7 @@ import java.sql.Date;
  * @date 2022-04-01
  */
 @Data
-@ApiModel("soft_patent")
+@ApiModel("SoftPatentVo")
 public class SoftPatentVo implements Serializable {
 
   @ApiModelProperty(value = "专利/软著表id")
