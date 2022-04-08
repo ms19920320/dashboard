@@ -5,6 +5,7 @@ import com.citycloud.ccuap.web.api.annotation.QueryMapping;
 import com.citycloud.ccuap.web.api.response.ApiResponse;
 import com.citycloud.dashboard.api.SoftPatentApi;
 import com.citycloud.dashboard.service.SoftPatentService;
+import com.citycloud.dashboard.viewobject.softpatent.PatentStaticsByDateRes;
 import com.citycloud.dashboard.viewobject.softpatent.PatentStaticsByTypeRes;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -25,5 +26,11 @@ public class SoftPatentApiImpl implements SoftPatentApi {
     @Override
     public ApiResponse<List<PatentStaticsByTypeRes>> softPatentStaticsByType() {
         return ApiResponse.successWithData(softPatentService.softPatentStaticsByType());
+    }
+
+    @QueryMapping(value = "softPatentStaticsByDate", method = RequestMethod.POST)
+    @Override
+    public ApiResponse<List<PatentStaticsByDateRes>> softPatentStaticsByDate() {
+        return ApiResponse.successWithData(softPatentService.softPatentStaticsByDate());
     }
 }

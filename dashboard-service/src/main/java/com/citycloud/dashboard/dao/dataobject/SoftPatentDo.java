@@ -14,6 +14,7 @@ import java.sql.Date;
 @TableName("soft_patent")
 public class SoftPatentDo {
     public static final String TYPE = "type";
+    public static final String DATE = "date";
     public static final String SOFT_PATENT_ID = "soft_patent_id";
 
 

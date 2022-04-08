@@ -2,6 +2,7 @@ package com.citycloud.dashboard.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.citycloud.dashboard.dao.dataobject.SoftPatentDo;
+import com.citycloud.dashboard.viewobject.softpatent.PatentStaticsByDateRes;
 import com.citycloud.dashboard.viewobject.softpatent.PatentStaticsByTypeRes;
 
 import java.util.List;
@@ -20,4 +21,11 @@ public interface SoftPatentService extends IService<SoftPatentDo> {
      * @return .
      */
     List<PatentStaticsByTypeRes> softPatentStaticsByType();
+
+    /**
+     * 按日期统计专利/软著总量
+     *
+     * @return .
+     */
+    List<PatentStaticsByDateRes> softPatentStaticsByDate();
 }
