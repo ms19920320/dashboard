@@ -8,6 +8,7 @@ import lombok.Data;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import java.sql.Date;
 
 /**
  * @author sf
@@ -35,7 +36,7 @@ public class SoftPatentListQuery implements IQuery {
   /** 类型 */
   @ApiModelProperty(value = "类型")
   @NotNull(message = "[9000,{类型}]")
-  private Integer type;
+  private String type;
 
   /** 专利/软著编号 */
   @ApiModelProperty(value = "专利/软著编号")
@@ -45,5 +46,5 @@ public class SoftPatentListQuery implements IQuery {
   /** 日期 */
   @ApiModelProperty(value = "日期")
   @NotNull(message = "[9000,{日期}]")
-  private java.sql.Timestamp date;
+  private Date date;
 }

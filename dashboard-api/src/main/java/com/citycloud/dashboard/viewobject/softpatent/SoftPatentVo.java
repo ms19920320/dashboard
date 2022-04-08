@@ -5,6 +5,7 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.sql.Date;
 
 /**
  * @author sf
@@ -21,11 +22,11 @@ public class SoftPatentVo implements Serializable {
   private String name;
 
   @ApiModelProperty(value = "类型")
-  private Integer type;
+  private String type;
 
   @ApiModelProperty(value = "专利/软著编号")
   private String code;
 
   @ApiModelProperty(value = "日期")
-  private java.sql.Timestamp date;
+  private Date date;
 }

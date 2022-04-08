@@ -24,12 +24,12 @@ spring:
             refresh: true
       discovery:
         enabled: true
-        server-addr: 116.62.108.129:8848
+        server-addr: 124.220.21.222:8848
         namespace: 441b7f9d-7077-4482-96c8-f95a85ea3ca4
 
   # redis连接池配置
   redis:
-    host: 116.62.108.129
+    host: 124.220.21.222
     port: 6379
     password: 123456
 
@@ -39,7 +39,7 @@ spring:
 
 # 服务地址、上下文配置。
 server:
-  address: 0.0.0.0
+  address: localhost
   port: 8080
   servlet:
     # （PS：上下文名必须要和应用名保持一致）
@@ -65,14 +65,14 @@ ccuap:
       # 业务数据库
       - name: bizdb
         db-type: mysql
-        host: 124.220.21.222:3306
+        host: localhost:3306
         database: dashboard
         username: root
         password: 123456
       # 系统数据库
       - name: sysdb
         db-type: mysql
-        host: 124.220.21.222:3306
+        host: localhost:3306
         database: dashboard
         username: root
         password: 123456

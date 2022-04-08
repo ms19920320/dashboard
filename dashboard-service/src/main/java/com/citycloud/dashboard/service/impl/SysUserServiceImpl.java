@@ -50,6 +50,7 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserDao, SysUserDo> imple
             return apiResponse;
         }
         ApiResponse<Object> aa = ApiResponse.failedWithMsg(1002, "aa", "bb");
+        aa.setSuccess(true);
         return aa;
     }
 
