@@ -30,7 +30,7 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserDao, SysUserDo> imple
     private SysUserDao sysUserDao;
 
     @Override
-    public ApiResponse<String> login(SysUserLoginCmd cmd) {
+    public ApiResponse<Object> login(SysUserLoginCmd cmd) {
         String username = cmd.getUsername();
         String password = cmd.getPassword();
         SysUserDo sysUserDo = sysUserDao.findUserByUsername(username);
@@ -45,11 +45,12 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserDao, SysUserDo> imple
             RequestContext requestContext = RequestContextHolder.newContext();
             requestContext.setToken(accessToken);
             RequestContextHolder.setContext(requestContext);
+            ApiResponse<Object> apiResponse = ApiResponse.successWithMsgAndData(accessToken, 1002);
             // 此处msg可以获取到
-            return ApiResponse.successWithMsgAndData(accessToken,1002);
+            return apiResponse;
         }
-        // 此处响应一直失败，不知道原因
-        return ApiResponse.failedWithMsg(1002, "aa");
+        ApiResponse<Object> aa = ApiResponse.failedWithMsg(1002, "aa", "bb");
+        return aa;
     }
 
     @Override

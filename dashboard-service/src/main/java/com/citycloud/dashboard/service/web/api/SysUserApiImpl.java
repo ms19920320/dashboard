@@ -22,7 +22,7 @@ public class SysUserApiImpl implements SysUserApi {
     @ResubmitCheck(enable = false)
     @CommandMapping("/login")
     @Override
-    public ApiResponse<String> login(SysUserLoginCmd cmd) {
+    public ApiResponse<Object> login(SysUserLoginCmd cmd) {
         return userService.login(cmd);
     }
 

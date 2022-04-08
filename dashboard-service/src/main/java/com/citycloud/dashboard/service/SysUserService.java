@@ -11,7 +11,7 @@ import com.citycloud.dashboard.parameter.command.sysuser.SysUserLoginCmd;
  */
 public interface SysUserService extends IService<SysUserDo> {
 
-  ApiResponse<String> login(SysUserLoginCmd cmd);
+  ApiResponse<Object> login(SysUserLoginCmd cmd);
 
   ApiResponse<String> logout();
 

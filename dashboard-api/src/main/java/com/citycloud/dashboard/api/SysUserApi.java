@@ -17,7 +17,7 @@ import javax.validation.Valid;
 @Api(tags = "权限操作接口")
 public interface SysUserApi {
     @ApiOperation(value = "用户登录", notes = "用户登录。")
-    ApiResponse<String> login(@RequestBody @Valid SysUserLoginCmd cmd);
+    ApiResponse<Object> login(@RequestBody @Valid SysUserLoginCmd cmd);
 
     @ApiOperation(value = "退出登录", notes = "退出登录。")
     ApiResponse<String> logout();
